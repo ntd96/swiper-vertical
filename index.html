@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Demo styles -->
+    <style>
+        html,
+        .timeline {
+            position: relative;
+            height: 100vh;
+        }
+
+        /* body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        } */
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Title */
+        .timeline .title, .timeline .swiper-pagination, .swiper-wrapper.content {
+            width: calc(100% / 3);
+            text-align: center;
+        }
+        .timeline .swiper-pagination {
+            display: grid;
+            gap: 20px;
+            right: 0;
+            left: 0;
+            top: 0;
+            transform: none;
+            position: initial;
+        }
+
+        .timeline .swiper-pagination-bullet {
+            width: 100%;
+            background-color: transparent;
+        }
+
+        .timeline img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Swiper -->
+    <div class="timeline">
+        <div class="swiper mySwiper">
+            <div class="title">This is Hel</div>
+            <div class="swiper-pagination year"></div>
+            <div class="swiper-wrapper content">
+                <div class="swiper-slide">
+                    <div class="img">
+                        <img src="https://symbols.vn/wp-content/uploads/2021/11/Icon-de-thuong.jpg" alt="">
+                    </div>
+                    <div class="conten">
+                        This is slide 1
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img">
+                        <img src="https://i.pinimg.com/236x/39/a5/27/39a527706239a83ad8be0525514fc62e.jpg" alt="">
+                    </div>
+                    <div class="conten">
+                        This is slide 2
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img">
+                        <img src="https://img.hoidap247.com/picture/question/20210910/large_1631233741197.jpg" alt="">
+                    </div>
+                    <div class="conten">
+                        This is slide 3
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(" .mySwiper", {
+            direction: "vertical",
+            loop: false,
+            speed: 1200,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                renderBullet: function (index, className) {
+                    const names = ["1. CÔNG NGHỆ SẢN XUẤT", "2. CHỨNG CHỈ CHẤT LƯỢNG", "3. KIỂM NGHIỆM NGUYÊN LIỆU"];
+                    return `<span class="${className}">${names[index]}</span>`; // Thay thế bằng danh sách tên của bạn
+                },
+            },
+        });
+    </script>
+</body>
+
+</html>
